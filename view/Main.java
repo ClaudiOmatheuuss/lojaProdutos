@@ -11,7 +11,6 @@ public class Main {
     String nomeLoja = pedeTextoNaoVazio(scanner, "Bem vindo(a), para comecar insira o nome da loja");
     System.out.print("Quantos produtos deseja gerenciar? \n>> ");
     int quantidadeProdutos = scanner.nextInt();
-    scanner.nextLine();
 
     ProdutosController produtosController = new ProdutosController(quantidadeProdutos);
     exibirBarra();
@@ -25,6 +24,7 @@ public class Main {
       mostraMenu();
       try {
         opcaoEscolhida = verificaOpcao(scanner);
+        scanner.nextLine();
       } catch (OpcaoInvalidaException e) {
         exibirBarra();
         System.out.println("Erro: " + e.getMessage());
@@ -38,9 +38,7 @@ public class Main {
       exibirBarra();
       if (opcaoEscolhida == 1) {
         System.out.println(opcaoEscolhida + ". criar produto");
-
         String codigo = pedeTextoNaoVazio(scanner, "Insira o codigo do produto");
-        scanner.nextLine();
         String nome = pedeTextoNaoVazio(scanner, "Insira o nome do produto");
         System.out.print("Insira o preco do produto \n >> ");
         try {

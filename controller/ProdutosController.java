@@ -6,17 +6,17 @@ import exception.ProdutoRepetidoException;
 import model.*;
 
 public final class ProdutosController {
-  private ProdutosData produtos;
+  private IProdutosData produtos;
   
   public ProdutosController (int quantidadeProdutos) {
-    produtos = new ProdutosData(quantidadeProdutos);
+    this.produtos = new ProdutosData(quantidadeProdutos);
   }
 
   public void criaProduto (String codigo, String nome, double preco) throws LimiteProdutosException, ProdutoRepetidoException, ProdutoInexistenteException {
     produtos.criaProduto(codigo, nome, preco);  
   }
   
-  public String getProduto (String codigo) throws ProdutoInexistenteException {
+  public String getProdutoInfo (String codigo) throws ProdutoInexistenteException {
     return produtos.getProdutoInfo(codigo);
   }
 

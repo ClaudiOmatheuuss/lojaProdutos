@@ -60,7 +60,7 @@ public class Main {
         exibirBarra();
         try {
           System.out.println("Informacoes do produto \n");
-          System.out.println(produtosController.getProduto(codigo));
+          System.out.println(produtosController.getProdutoInfo(codigo));
         } catch (ProdutoInexistenteException e) {
           System.out.println("Erro: " + e.getMessage());
         }

@@ -45,6 +45,24 @@ O sistema está dividido em camadas para facilitar manutenção e organização:
 
 ---
 
+## 🏗️ Arquitetura do Sistema
+
+O sistema está dividido em camadas para facilitar manutenção e organização:
+
+- 👁️ **Camada de Apresentação (View):** Interface com o usuário, menus e captura de dados via terminal.
+- ⚙️ **Camada de Controle (Controller):** Validações, regras de negócio e manipulação dos dados.
+- 💾 **Camada de Dados (Model):** Estrutura e armazenamento dos produtos em memória (array).
+
+---
+
+### 📌 Diagrama de Arquitetura
+
+Aqui está a arquitetura do projeto baseada no padrão MVC e aplicando os princípios SOLID:
+
+![Diagrama de Arquitetura do Sistema](./docs/arquitetura_mvc_solid.png)
+
+---
+
 ## 🚀 Como Executar
 
 1. Compile todos os arquivos `.java` das pastas `model`, `controller`, `view` e `exception`.

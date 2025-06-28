@@ -1,10 +1,9 @@
 package model;
-
 import exception.LimiteProdutosException;
 import exception.ProdutoInexistenteException;
 import exception.ProdutoRepetidoException;
 
-public final class ProdutosData {
+public final class ProdutosData implements IProdutosData {
   private Produto[] listaProdutos;
   private int contador;
   
@@ -13,6 +12,7 @@ public final class ProdutosData {
     contador = 0;
   }
 
+  @Override
   public void criaProduto(String codigo, String nome, double preco) throws LimiteProdutosException, ProdutoRepetidoException, ProdutoInexistenteException {
     Boolean produtoExiste = false;
     try {
@@ -49,6 +49,7 @@ public final class ProdutosData {
     return p;
   }  
 
+  @Override
   public String getProdutoInfo (String codigo) throws ProdutoInexistenteException {
     Produto p = getProduto(codigo);
     String[] produtoInfo = p.getInfo();
@@ -60,6 +61,7 @@ public final class ProdutosData {
     return codigoProduto + nome + preco;
   }  
 
+  @Override
   public String[] getListaProdutos () throws ProdutoInexistenteException {
     String[] novaLista = new String[listaProdutos.length];
     String informacoes;
@@ -77,6 +79,7 @@ public final class ProdutosData {
     return novaLista;
   }
 
+  @Override
   public int getQuantidadeProdutos() {
     int count = 0;
     for (Produto produto : listaProdutos) {
@@ -87,12 +90,14 @@ public final class ProdutosData {
     return count;
   }
 
+  @Override
   public void atualizaProduto(String codigo, String novoNome, double novoPreco) throws ProdutoInexistenteException {
     Produto p = getProduto(codigo);
     int idProduto = p.getId();
     criaProduto(codigo, novoNome, novoPreco, idProduto);
   }
 
+  @Override
   public void deletaProduto(String codigo) throws ProdutoInexistenteException {
     Produto p = getProduto(codigo);
     listaProdutos[p.getId()] = null;

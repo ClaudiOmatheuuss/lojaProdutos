@@ -7,16 +7,6 @@ Este projeto é um sistema simples, porém robusto, para **cadastro e gerenciame
 
 ---
 
-## 🏗️ Arquitetura do Sistema
-
-O sistema está dividido em camadas para facilitar manutenção e organização:
-
-- 👁️ **Camada de Apresentação (View):** Interface com o usuário, menus e captura de dados via terminal.
-- ⚙️ **Camada de Controle (Controller):** Validações, regras de negócio e manipulação dos dados.
-- 💾 **Camada de Dados (Model):** Estrutura e armazenamento dos produtos em memória (array).
-
----
-
 ## ✨ Funcionalidades
 
 - ➕ **Cadastro de Produtos:** Insere produtos com código, nome e preço, evitando códigos duplicados.
@@ -36,6 +26,7 @@ O sistema está dividido em camadas para facilitar manutenção e organização:
 │   └── ProdutosController.java
 ├── model
 │   ├── Produto.java
+│   ├── IProdutosData.java
 │   └── ProdutosData.java
 ├── view
 │   └── Main.java
@@ -50,8 +41,8 @@ O sistema está dividido em camadas para facilitar manutenção e organização:
 O sistema está dividido em camadas para facilitar manutenção e organização:
 
 - 👁️ **Camada de Apresentação (View):** Interface com o usuário, menus e captura de dados via terminal.
-- ⚙️ **Camada de Controle (Controller):** Validações, regras de negócio e manipulação dos dados.
-- 💾 **Camada de Dados (Model):** Estrutura e armazenamento dos produtos em memória (array).
+- ⚙️ **Camada de Controle (Controller):** Aplica as validações, regras de negócio e manipulação dos dados através de inversão de dependência, isto é, depende da implementação da interface.
+- 💾 **Camada de Dados (Model):** Contém Estrutura da regra de negócio e armazenamento dos produtos em memória (array).
 
 ---
 
